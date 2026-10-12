@@ -75,4 +75,5 @@ Anyone with write access to this repository can update the map from a browser, a
 - **Map data** © OpenStreetMap contributors, ODbL. **Tiles** © Stadia Maps, © OpenMapTiles. The attribution in the map's corner is required and must stay visible.
 - **Stadia Maps** free plan, non-commercial use. Whether a nonprofit event with paid registration counts as non-commercial is an open question with Stadia.
 - **GitHub Pages** usage is subject to GitHub's [Pages limits and acceptable use](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
-- This repository has no license of its own yet.
+- **This repository's code** is MIT-licensed, © GA 2027 Host Committee. See [LICENSE](LICENSE).
+- **Map content** in `site/places.json` (place selection, notes, route wording, links) is © GA 2027 Host Committee, all rights reserved. The MIT license doesn't cover it.

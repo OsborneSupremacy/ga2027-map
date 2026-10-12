@@ -13,7 +13,13 @@
             "price": "$$$",
             "volunteer": true,
             "lat": 43.0410,
-            "lng": -87.9168
+            "lng": -87.9168,
+            "links": [
+                {
+                    "text": "Website",
+                    "url": "https://interstateparking.com/milwaukee/1205"
+                }
+            ]
         },
         {
             "type": "parking",
@@ -21,7 +27,13 @@
             "price": "$$",
             "volunteer": true,
             "lat": 43.0428,
-            "lng": -87.9200
+            "lng": -87.9200,
+            "links": [
+                {
+                    "text": "Website",
+                    "url": "https://interstateparking.com/milwaukee/1139"
+                }
+            ]
         },
         {
             "type": "parking",
@@ -29,7 +41,13 @@
             "price": "$$",
             "volunteer": true,
             "lat": 43.0435,
-            "lng": -87.9150
+            "lng": -87.9150,
+            "links": [
+                {
+                    "text": "Website",
+                    "url": "https://interstateparking.com/milwaukee/1169"
+                }
+            ]
         },
         {
             "type": "parking",
@@ -37,7 +55,13 @@
             "price": "$$$",
             "volunteer": true,
             "lat": 43.0400,
-            "lng": -87.9137
+            "lng": -87.9137,
+            "links": [
+                {
+                    "text": "Website",
+                    "url": "https://interstateparking.com/milwaukee/1180"
+                }
+            ]
         },
         {
             "type": "parking",
@@ -45,7 +69,13 @@
             "price": "$$$",
             "volunteer": true,
             "lat": 43.0408,
-            "lng": -87.9147
+            "lng": -87.9147,
+            "links": [
+                {
+                    "text": "Website",
+                    "url": "https://interstateparking.com/milwaukee/1193"
+                }
+            ]
         },
         {
             "type": "parking",
@@ -169,7 +199,13 @@
             "icon": "truck",
             "name": "Loading Dock (Baird Center)",
             "lat": 43.0410,
-            "lng": -87.9190
+            "lng": -87.9190,
+            "links": [
+                {
+                    "text": "Website",
+                    "url": "https://abmparking.com/facilities/401-wisconsin-avenue-parking/"
+                }
+            ]
         },
         {
             "type": "venue",

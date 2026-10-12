@@ -1,7 +1,31 @@
+/* Wrapper and header are built by ga-map.js around the embed's bare #gaMap, so the header and
+   map read as one card. */
+.ga-wrap { border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+
+/* The header sets its own colors and fonts so the Squarespace theme can't restyle the h2 */
+.ga-wrap .ga-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: #14284b; color: #fff; padding: 10px 14px; margin: 0;
+  font-family: Arial, Helvetica, sans-serif; text-align: left;
+}
+.ga-wrap .ga-header h2 {
+  margin: 0; padding: 0; color: #fff;
+  font: 700 18px/1.2 Arial, Helvetica, sans-serif;
+  letter-spacing: normal; text-transform: none; text-align: left;
+}
+.ga-wrap .ga-header .sub {
+  display: block; color: #fff; font-size: 12px; font-weight: 400; opacity: .85;
+}
+
 #gaMap {
   height: clamp(560px, 80vh, 900px);
   width: 100%;
-  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .ga-wrap .ga-header h2 { font-size: 16px; }
+  .ga-wrap .ga-header .sub { display: none; }
+  #gaMap { height: calc(100svh - 52px); min-height: 420px; }
 }
 
 .ga-pin {

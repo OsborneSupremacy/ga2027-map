@@ -9,12 +9,18 @@ The map is hosted on GitHub Pages at `https://map.pcaga2027.org` and embedded in
 | Path | What it is |
 | --- | --- |
 | `site/places.json` | Every pin: names, prices, notes, links, coordinates. **The file you edit most.** |
-| `site/ga-map.js` | Map logic. Fetches `places.json` and renders it. |
-| `site/ga-map.css` | Pin, legend, and popup styles. |
+| `site/ga-map.js` | Map logic. Builds the title header, fetches `places.json`, and renders it. |
+| `site/ga-map.css` | Header, pin, legend, and popup styles. |
 | `site/index.html` | Preview page served at the site root, for checking an edit without Squarespace. |
 | `embed/squarespace.html` | The snippet pasted into the Squarespace Code block. Paste once; don't edit. |
 | `scripts/validate-places.mjs` | Checks `places.json` before it's published. |
 | `.github/workflows/deploy-pages.yml` | Validates and publishes `site/` on every push to `main`. |
+
+## Title header
+
+`ga-map.js` wraps the embed's `#gaMap` in a card with a navy title bar ("GA 2027 Area Map", plus a subtitle on screens wider than 600px), so the embed snippet stays a bare `<div>`. The header sets its own colors and fonts so the Squarespace theme can't restyle it. On phones the map fills the screen below the header.
+
+The Squarespace page's own header was removed on purpose, because on mobile it conflicted with the map. Don't add it back; the map's title bar replaces it.
 
 ## Updating the map
 

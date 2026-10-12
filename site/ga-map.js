@@ -11,6 +11,16 @@
   var el = document.getElementById('gaMap');
   if (!el) return;
 
+  // The embed only has a bare #gaMap, so wrap it in a card with a title header here
+  var wrap = document.createElement('div');
+  wrap.className = 'ga-wrap';
+  wrap.innerHTML =
+    '<div class="ga-header"><h2>GA 2027 Area Map' +
+    '<span class="sub">Parking, hotels &amp; transportation near the Baird Center</span>' +
+    '</h2></div>';
+  el.parentNode.insertBefore(wrap, el);
+  wrap.appendChild(el);
+
   var placesUrl = el.getAttribute('data-places') ||
     new URL('places.json', script ? script.src : window.location.href).href;
   var showCoords = /gaCoords/.test(window.location.search + window.location.hash);
@@ -94,7 +104,7 @@
     Object.keys(GROUP_NAMES).forEach(function (type) {
       overlays[GROUP_NAMES[type]] = groups[type];
     });
-    L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+    L.control.layers(null, overlays, { collapsed: window.innerWidth < 600 }).addTo(map);
 
     // Legend
     var legend = L.control({ position: 'bottomleft' });

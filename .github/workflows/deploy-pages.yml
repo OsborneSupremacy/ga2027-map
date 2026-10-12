@@ -1,0 +1,61 @@
+name: Deploy Map
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'scripts/validate-places.mjs'
+      - '.github/workflows/deploy-pages.yml'
+  pull_request:
+    paths:
+      - 'site/**'
+      - 'scripts/validate-places.mjs'
+  workflow_dispatch:
+
+# One deploy at a time, and never cancel one partway through.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Validate and package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # This runs before anything is published, so a typo in places.json fails here and the live
+      # map keeps serving the last good version.
+      - name: Validate places.json
+        run: node scripts/validate-places.mjs
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    name: Publish to GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

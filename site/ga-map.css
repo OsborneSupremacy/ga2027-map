@@ -1,0 +1,40 @@
+#gaMap {
+  height: clamp(560px, 80vh, 900px);
+  width: 100%;
+  border-radius: 6px;
+}
+
+.ga-pin {
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  font: 700 13px/1 Arial, Helvetica, sans-serif;
+  border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.45);
+}
+.ga-pin.parking   { background: #ffe500; color: #222; }
+.ga-pin.hotel     { background: #3f7a35; color: #fff; }
+.ga-pin.transport { background: #14284b; color: #fff; font-size: 10px; }
+.ga-pin.venue     { background: #1f4fa0; color: #fff; width: 34px; height: 34px; font-size: 11px; }
+.ga-pin.warning   { background: #c62828; color: #fff; font-size: 15px; }
+
+/* Keep map text dark even when the Squarespace section uses light text */
+#gaMap .ga-legend,
+#gaMap .leaflet-popup-content,
+#gaMap .leaflet-control-layers,
+#gaMap .ga-error { color: #222; }
+
+.ga-popup b { font-size: 14px; }
+.ga-popup .note { color: #555; font-style: italic; }
+
+.ga-legend {
+  background: #fff; padding: 8px 10px; border-radius: 4px;
+  font: 12px/1.5 Arial, Helvetica, sans-serif;
+  box-shadow: 0 1px 4px rgba(0,0,0,.3);
+}
+
+/* Shown in place of the map when Leaflet or places.json fails to load */
+.ga-error {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; padding: 24px; box-sizing: border-box;
+  background: #f4f4f4; border: 1px solid #ddd; border-radius: 6px;
+  font: 15px/1.5 Arial, Helvetica, sans-serif; text-align: center;
+}

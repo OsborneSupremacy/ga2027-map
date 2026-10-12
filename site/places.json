@@ -25,7 +25,7 @@
     { "type": "transport", "label": "Ld", "name": "Loading Dock (Baird Center)", "lat": 43.0410, "lng": -87.9190 },
 
     { "type": "venue", "label": "GA", "name": "Baird Center", "lat": 43.0397, "lng": -87.9172 },
-    { "type": "warning", "label": "⛔", "name": "No left turn", "lat": 43.0389, "lng": -87.9143,
+    { "type": "warning", "label": "⛔", "name": "No left turn", "lat": 43.03880, "lng": -87.91452,
       "note": "Eastbound Wisconsin Ave cannot turn left onto Dr. MLK Jr. Dr." }
   ]
 }

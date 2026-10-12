@@ -48,7 +48,7 @@ Add `?gaCoords` to the page URL, for example <https://map.pcaga2027.org/?gaCoord
 python3 -m http.server 8000 --directory site
 ```
 
-Then open <http://localhost:8000/>. Stadia allows localhost without configuration.
+Then open <http://localhost:8000/?gaCoords/>. Stadia allows localhost without configuration.
 
 ```bash
 node scripts/validate-places.mjs
@@ -58,7 +58,7 @@ node scripts/validate-places.mjs
 
 1. Make the repository public. Pages on a private repo requires GitHub Pro.
 2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
-3. Verify `pcaga2027.org` for the account under **Settings → Pages → Verified domains**, which keeps anyone else from claiming a subdomain of it on Pages. GitHub gives you a TXT record to add in Squarespace DNS.
+3. Verify `pcaga2027.org` in the owning account's Pages settings (<https://github.com/settings/pages>, not the repo's), which keeps anyone else from claiming a subdomain of it on Pages. GitHub gives you a TXT record to add in Squarespace DNS.
 4. In Squarespace DNS, add `CNAME map → osbornesupremacy.github.io`.
 5. **Settings → Pages → Custom domain:** `map.pcaga2027.org`. Wait for the certificate, then tick **Enforce HTTPS**. A workflow-based deploy takes the domain from this setting, so there's no `CNAME` file in `site/`.
 6. Paste `embed/squarespace.html` into a Code block on the Squarespace page.

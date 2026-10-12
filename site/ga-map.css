@@ -54,13 +54,14 @@
 
 /* Button-sized links so they're easy to tap on a phone */
 .ga-popup .directions {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
   margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e2e2;
-  font-weight: 700;
 }
+/* Label on its own row; buttons side by side below it, wrapping only if the popup is too narrow */
+.ga-popup .directions span { display: block; margin-bottom: 6px; font-weight: 700; }
 #gaMap .ga-popup .directions a {
   padding: 5px 9px; border: 1px solid #c8c8c8; border-radius: 4px;
   background: #f6f6f6; color: #222; text-decoration: none; font-weight: 400; white-space: nowrap;
+  display: inline-block; margin: 0 6px 6px 0;
 }
 #gaMap .ga-popup .directions a:hover { background: #ebebeb; }
 

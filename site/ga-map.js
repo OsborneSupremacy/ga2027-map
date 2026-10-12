@@ -93,7 +93,7 @@
     var google = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(dest);
     var apple = 'https://maps.apple.com/?daddr=' + encodeURIComponent(dest) +
       '&q=' + encodeURIComponent(p.name);
-    return '<div class="directions">Directions:' +
+    return '<div class="directions"><span>Directions:</span>' +
       '<a href="' + esc(google) + '" target="_blank" rel="noopener">Google Maps</a>' +
       '<a href="' + esc(apple) + '" target="_blank" rel="noopener">Apple Maps</a></div>';
   }

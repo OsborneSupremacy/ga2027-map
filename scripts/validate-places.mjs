@@ -18,7 +18,9 @@ try {
 }
 
 const TYPES = ['parking', 'hotel', 'transport', 'venue', 'warning'];
-const PLACE_KEYS = ['type', 'label', 'name', 'price', 'volunteer', 'note', 'links', 'lat', 'lng'];
+const PLACE_KEYS = ['type', 'icon', 'name', 'price', 'volunteer', 'note', 'links', 'lat', 'lng'];
+// Must match ICONS in site/ga-map.js
+const ICONS = ['parking', 'hotel', 'building', 'train', 'truck', 'warning'];
 
 // A generous box around downtown Milwaukee. Catches swapped lat/lng and dropped minus signs.
 const BOUNDS = { lat: [42.9, 43.2], lng: [-88.1, -87.8] };
@@ -59,7 +61,7 @@ if (!data || typeof data !== 'object' || Array.isArray(data)) {
         if (!PLACE_KEYS.includes(key)) errors.push(`${where}: unknown key "${key}"`);
       }
       if (!TYPES.includes(p.type)) errors.push(`${where}: type must be one of ${TYPES.join(', ')}`);
-      if (!isString(p.label) || [...p.label].length > 3) errors.push(`${where}: label must be 1–3 characters`);
+      if (p.icon !== undefined && !ICONS.includes(p.icon)) errors.push(`${where}: icon must be one of ${ICONS.join(', ')}`);
       if (!isString(p.name)) errors.push(`${where}: name is required`);
       if (!inRange(p.lat, BOUNDS.lat)) errors.push(`${where}: lat must be a number near ${BOUNDS.lat.join('–')}`);
       if (!inRange(p.lng, BOUNDS.lng)) errors.push(`${where}: lng must be a number near ${BOUNDS.lng.join('–')} (note the minus sign)`);
@@ -83,9 +85,8 @@ if (!data || typeof data !== 'object' || Array.isArray(data)) {
         }
       }
 
-      const id = `${p.type}/${p.label}`;
-      if (seen.has(id)) errors.push(`${where}: another ${p.type} already uses label "${p.label}"`);
-      seen.add(id);
+      if (seen.has(p.name)) errors.push(`${where}: another place already has this name`);
+      seen.add(p.name);
     });
   }
 }

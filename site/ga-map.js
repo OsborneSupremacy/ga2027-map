@@ -27,6 +27,26 @@
 
   var GROUP_NAMES = { parking: 'Parking', hotel: 'Hotels', transport: 'Transportation' };
 
+  // Line icons for the pins, drawn on a 24x24 grid and stroked in the pin's text color. Each type
+  // has a default; "icon" in places.json overrides it for one place. Keep the names in sync with
+  // scripts/validate-places.mjs.
+  var ICONS = {
+    parking: '<path d="M8 20V4h5.5a4.5 4.5 0 0 1 0 9H8"/>',
+    hotel: '<path d="M3 5v14M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11.5" r="1.8"/>',
+    building: '<path d="M3 9l9-5 9 5M4 20h16M6 11v6M10 11v6M14 11v6M18 11v6"/>',
+    train: '<rect x="6" y="3" width="12" height="13" rx="3"/><path d="M6 10h12M9.5 13h.01M14.5 13h.01M9 19l-2 3M15 19l2 3"/>',
+    truck: '<path d="M2 5h11v10H2zM13 8h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/>',
+    warning: '<path d="M12 5v9M12 18.5h.01"/>'
+  };
+  var DEFAULT_ICONS = {
+    parking: 'parking', hotel: 'hotel', venue: 'building', transport: 'train', warning: 'warning'
+  };
+
+  function pinHtml(type, icon) {
+    return '<div class="ga-pin ' + esc(type) + '"><svg viewBox="0 0 24 24" aria-hidden="true">' +
+      (ICONS[icon || DEFAULT_ICONS[type]] || '') + '</svg></div>';
+  }
+
   function fail(message) {
     el.innerHTML = '';
     var div = document.createElement('div');
@@ -64,14 +84,6 @@
     return html + '</div>';
   }
 
-  // "A–F" from the labels of one type, in the order they appear in the file
-  function labelRange(places, type) {
-    var labels = places.filter(function (p) { return p.type === type; })
-      .map(function (p) { return p.label; });
-    if (!labels.length) return '';
-    return labels.length === 1 ? labels[0] : labels[0] + '–' + labels[labels.length - 1];
-  }
-
   function render(data) {
     var places = data.places;
     var map = L.map(el, { scrollWheelZoom: false }).setView(data.view.center, data.view.zoom);
@@ -90,7 +102,7 @@
       var size = p.type === 'venue' ? 34 : 26;
       var icon = L.divIcon({
         className: '',
-        html: '<div class="ga-pin ' + esc(p.type) + '">' + esc(p.label) + '</div>',
+        html: pinHtml(p.type, p.icon),
         iconSize: [size, size],
         iconAnchor: [size / 2, size / 2]
       });
@@ -111,8 +123,8 @@
     legend.onAdd = function () {
       var div = L.DomUtil.create('div', 'ga-legend');
       div.innerHTML =
-        '<b>Parking</b> ' + esc(labelRange(places, 'parking')) +
-        ' &nbsp; <b>Hotels</b> ' + esc(labelRange(places, 'hotel')) + '<br>' +
+        '<span class="key">' + pinHtml('parking') + 'Parking</span>' +
+        '<span class="key">' + pinHtml('hotel') + 'Hotels</span><br>' +
         'Tap any pin for details. $–$$$ = relative price.';
       return div;
     };

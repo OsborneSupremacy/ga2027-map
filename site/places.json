@@ -9,7 +9,6 @@
     "places": [
         {
             "type": "parking",
-            "label": "A",
             "name": "Baird Center Garage",
             "price": "$$$",
             "volunteer": true,
@@ -18,7 +17,6 @@
         },
         {
             "type": "parking",
-            "label": "B",
             "name": "6th & State Lot",
             "price": "$$",
             "volunteer": true,
@@ -27,7 +25,6 @@
         },
         {
             "type": "parking",
-            "label": "C",
             "name": "332 State Lot",
             "price": "$$",
             "volunteer": true,
@@ -36,7 +33,6 @@
         },
         {
             "type": "parking",
-            "label": "D",
             "name": "Symphony (MSO) Lot",
             "price": "$$$",
             "volunteer": true,
@@ -45,7 +41,6 @@
         },
         {
             "type": "parking",
-            "label": "E",
             "name": "3rd & Wells Lot",
             "price": "$$$",
             "volunteer": true,
@@ -54,7 +49,6 @@
         },
         {
             "type": "parking",
-            "label": "F",
             "name": "401 W Wisconsin Ave",
             "price": "$$",
             "volunteer": false,
@@ -64,7 +58,6 @@
         },
         {
             "type": "hotel",
-            "label": "1",
             "name": "Hilton Milwaukee",
             "lat": 43.0385,
             "lng": -87.9175,
@@ -77,7 +70,6 @@
         },
         {
             "type": "hotel",
-            "label": "2",
             "name": "The Marc Hotel",
             "lat": 43.0384,
             "lng": -87.9185,
@@ -90,7 +82,6 @@
         },
         {
             "type": "hotel",
-            "label": "3",
             "name": "DoubleTree by Hilton Milwaukee Downtown",
             "lat": 43.0387,
             "lng": -87.9195,
@@ -103,7 +94,6 @@
         },
         {
             "type": "hotel",
-            "label": "4",
             "name": "SpringHill Suites by Marriott Milwaukee Downtown",
             "lat": 43.0400,
             "lng": -87.9150,
@@ -116,7 +106,6 @@
         },
         {
             "type": "hotel",
-            "label": "5",
             "name": "Hyatt Regency Milwaukee",
             "lat": 43.0413,
             "lng": -87.9148,
@@ -129,7 +118,6 @@
         },
         {
             "type": "hotel",
-            "label": "6",
             "name": "Fairfield by Marriott Inn & Suites Milwaukee Downtown",
             "lat": 43.0392,
             "lng": -87.9135,
@@ -142,7 +130,6 @@
         },
         {
             "type": "hotel",
-            "label": "7",
             "name": "Courtyard by Marriott Milwaukee Downtown",
             "lat": 43.0378,
             "lng": -87.9137,
@@ -155,7 +142,6 @@
         },
         {
             "type": "hotel",
-            "label": "8",
             "name": "Hampton Inn & Suites Milwaukee Downtown",
             "lat": 43.0392,
             "lng": -87.9117,
@@ -168,7 +154,6 @@
         },
         {
             "type": "transport",
-            "label": "Tr",
             "name": "Milwaukee Intermodal Station",
             "lat": 43.0346,
             "lng": -87.9170,
@@ -181,14 +166,13 @@
         },
         {
             "type": "transport",
-            "label": "Ld",
+            "icon": "truck",
             "name": "Loading Dock (Baird Center)",
             "lat": 43.0410,
             "lng": -87.9190
         },
         {
             "type": "venue",
-            "label": "GA",
             "name": "Baird Center",
             "lat": 43.0397,
             "lng": -87.9172,
@@ -201,7 +185,6 @@
         },
         {
             "type": "warning",
-            "label": "⛔",
             "name": "No left turn",
             "lat": 43.03880,
             "lng": -87.91452,

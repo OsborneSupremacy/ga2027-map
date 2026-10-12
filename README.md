@@ -32,17 +32,15 @@ The Squarespace page's own header was removed on purpose, because on mobile it c
 ### Place fields
 
 ```json
-{ "type": "parking", "label": "A", "name": "Baird Center Garage", "price": "$$$", "volunteer": true,
+{ "type": "parking", "name": "Baird Center Garage", "price": "$$$", "volunteer": true,
   "lat": 43.0410, "lng": -87.9168, "note": "Optional italic note",
   "links": [{ "text": "Pre-pay", "url": "https://example.com" }] }
 ```
 
-- `type`: one of `parking`, `hotel`, `transport`, `venue`, `warning`. It sets the pin color and which layer toggle controls the pin.
-- `label`: the text inside the pin (1 to 3 characters).
-- `name`, `lat`, `lng`: required.
+- `type`: one of `parking`, `hotel`, `transport`, `venue`, `warning`. It sets the pin color and icon, and which layer toggle controls the pin.
+- `name`, `lat`, `lng`: required. Each place needs a different name.
+- `icon`: optional. Replaces the type's usual icon for this one place. One of `parking`, `hotel`, `building`, `train`, `truck`, `warning`. The icons are drawn in `ICONS` in `ga-map.js`, and a new one has to be added there and in `scripts/validate-places.mjs`.
 - `price` (`$` to `$$$`), `volunteer` (`true`/`false`), `note`, `links`: optional. Links must be `https://`.
-
-The legend's ranges ("Parking A–F, Hotels 1–8") come from the first and last label of each type, in file order.
 
 ### Finding coordinates
 

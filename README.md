@@ -42,6 +42,8 @@ The Squarespace page's own header was removed on purpose, because on mobile it c
 - `icon`: optional. Replaces the type's usual icon for this one place. One of `parking`, `hotel`, `building`, `train`, `truck`, `warning`. The icons are drawn in `ICONS` in `ga-map.js`, and a new one has to be added there and in `scripts/validate-places.mjs`.
 - `price` (`$` to `$$$`), `volunteer` (`true`/`false`), `note`, `links`: optional. Links must be `https://`.
 
+Every popup except `warning` pins gets Google Maps and Apple Maps directions buttons, built from `lat`/`lng`. Directions go to the pin itself, so put a parking pin on the lot's entrance.
+
 ### Finding coordinates
 
 Add `?gaCoords` to the page URL, for example <https://map.pcaga2027.org/?gaCoords>, then click the map to read lat/lng. This mode is off for everyone else, so there's no flag to remember to turn off before going live.

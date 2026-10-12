@@ -81,7 +81,21 @@
       var url = safeUrl(l.url);
       if (url) html += '<br><a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(l.text) + '</a>';
     });
+    if (p.type !== 'warning') html += directionsHtml(p);
     return html + '</div>';
+  }
+
+  // Route to the pin's coordinates rather than its name, since parking lots have no address the
+  // map apps can search for. On a phone, both links open the installed app; elsewhere they open the
+  // web version.
+  function directionsHtml(p) {
+    var dest = p.lat + ',' + p.lng;
+    var google = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(dest);
+    var apple = 'https://maps.apple.com/?daddr=' + encodeURIComponent(dest) +
+      '&q=' + encodeURIComponent(p.name);
+    return '<div class="directions">Directions:' +
+      '<a href="' + esc(google) + '" target="_blank" rel="noopener">Google Maps</a>' +
+      '<a href="' + esc(apple) + '" target="_blank" rel="noopener">Apple Maps</a></div>';
   }
 
   function render(data) {

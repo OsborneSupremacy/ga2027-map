@@ -52,6 +52,18 @@
 .ga-popup b { font-size: 14px; }
 .ga-popup .note { color: #555; font-style: italic; }
 
+/* Button-sized links so they're easy to tap on a phone */
+.ga-popup .directions {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e2e2;
+  font-weight: 700;
+}
+#gaMap .ga-popup .directions a {
+  padding: 5px 9px; border: 1px solid #c8c8c8; border-radius: 4px;
+  background: #f6f6f6; color: #222; text-decoration: none; font-weight: 400; white-space: nowrap;
+}
+#gaMap .ga-popup .directions a:hover { background: #ebebeb; }
+
 .ga-legend {
   background: #fff; padding: 8px 10px; border-radius: 4px;
   font: 12px/1.5 Arial, Helvetica, sans-serif;

@@ -237,7 +237,7 @@
                     "url":"https://www.docsbbq.net/"
                 }
             ],
-            "note":"BBQ Price $$"
+            "note":"BBQ - Price: $$"
         },
         {
             "type": "dining",
@@ -251,7 +251,21 @@
                 }
                 
             ],
-            "note":"Steakhouse - Price $$$ - Reservations Recommended"
+            "note":"Steakhouse - Price: $$$ - Reservations Recommended"
+        },
+        {
+            "type": "dining",
+            "name": "Draft & Vessel",
+            "lat": 43.03872,
+            "lng": -87.91711,
+            "links": [
+                {
+                    "text":"Website",
+                    "url":"https://www.draftandvessel.com/draft-co"
+                }
+                
+            ],
+            "note":"Taste of Wisconsin! beer, fried cheese curds and pubgrub - Price $"
 
         }
     ]

@@ -12,7 +12,9 @@ The map is hosted on GitHub Pages at `https://map.pcaga2027.org` and embedded in
 | `site/ga-map.js` | Map logic. Builds the title header, fetches `places.json`, and renders it. |
 | `site/ga-map.css` | Header, pin, legend, and popup styles. |
 | `site/index.html` | Preview page served at the site root, for checking an edit without Squarespace. |
+| `site/mini.html` | Small venue-only map for the site footer. |
 | `embed/squarespace.html` | The snippet pasted into the Squarespace Code block. Paste once; don't edit. |
+| `embed/footer.html` | The iframe snippet pasted into a Code block in the Squarespace footer. |
 | `scripts/validate-places.mjs` | Checks `places.json` before it's published. |
 | `.github/workflows/deploy-pages.yml` | Validates and publishes `site/` on every push to `main`. |
 
@@ -21,6 +23,10 @@ The map is hosted on GitHub Pages at `https://map.pcaga2027.org` and embedded in
 `ga-map.js` wraps the embed's `#gaMap` in a card with a navy title bar ("GA 2027 Area Map", plus a subtitle on screens wider than 600px), so the embed snippet stays a bare `<div>`. The header sets its own colors and fonts so the Squarespace theme can't restyle it. On phones the map fills the screen below the header.
 
 The Squarespace page's own header was removed on purpose, because on mobile it conflicted with the map. Don't add it back; the map's title bar replaces it.
+
+## Footer map
+
+`site/mini.html` shows only the Baird Center pin, with no header, legend, or layer toggles, and fills whatever frame it's placed in. It replaces the Google Map in the site footer: paste `embed/footer.html` into a Code block there and adjust its height to match the address box beside it. Clicking the pin or the "Parking, hotels & dining map" button opens the full map page, `https://www.pcaga2027.org/map`, which is set by `data-full-map` in `mini.html`. The pin's position comes from the `venue` entry in `places.json`.
 
 ## Updating the map
 

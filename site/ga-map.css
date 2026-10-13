@@ -81,3 +81,11 @@
   background: #f4f4f4; border: 1px solid #ddd; border-radius: 6px;
   font: 15px/1.5 Arial, Helvetica, sans-serif; text-align: center;
 }
+
+/* Mini mode (mini.html): link from the footer map to the full map page */
+#gaMap .ga-full-link {
+  background: #fff; color: #14284b; padding: 5px 9px; border-radius: 4px;
+  font: 700 12px/1.3 Arial, Helvetica, sans-serif; text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,.3);
+}
+#gaMap .ga-full-link:hover { background: #f4f4f4; }

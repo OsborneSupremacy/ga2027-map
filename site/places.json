@@ -210,6 +210,7 @@
         {
             "type": "venue",
             "name": "Baird Center",
+            "note": "400 W Wisconsin Ave, Milwaukee, WI 53203",
             "lat": 43.0397,
             "lng": -87.9172,
             "links": [

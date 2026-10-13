@@ -6,20 +6,27 @@
 // Coordinate-picking mode (click the map to read lat/lng) is off unless the page URL contains
 // "gaCoords", e.g. https://www.pcaga2027.org/map?gaCoords. Nothing has to be switched off before
 // going live.
+//
+// data-mode="mini" on #gaMap draws a small venue-only map with no header, legend, or layer
+// toggles, for the site footer (see mini.html). data-full-map names the page its "full map" link
+// opens.
 (function () {
   var script = document.currentScript;
   var el = document.getElementById('gaMap');
   if (!el) return;
+  var mini = el.getAttribute('data-mode') === 'mini';
 
   // The embed only has a bare #gaMap, so wrap it in a card with a title header here
-  var wrap = document.createElement('div');
-  wrap.className = 'ga-wrap';
-  wrap.innerHTML =
-    '<div class="ga-header"><h2>GA 2027 Area Map' +
-    '<span class="sub">Parking, hotels, dining &amp; transportation near the Baird Center</span>' +
-    '</h2></div>';
-  el.parentNode.insertBefore(wrap, el);
-  wrap.appendChild(el);
+  if (!mini) {
+    var wrap = document.createElement('div');
+    wrap.className = 'ga-wrap';
+    wrap.innerHTML =
+      '<div class="ga-header"><h2>GA 2027 Area Map' +
+      '<span class="sub">Parking, hotels, dining &amp; transportation near the Baird Center</span>' +
+      '</h2></div>';
+    el.parentNode.insertBefore(wrap, el);
+    wrap.appendChild(el);
+  }
 
   var placesUrl = el.getAttribute('data-places') ||
     new URL('places.json', script ? script.src : window.location.href).href;
@@ -101,7 +108,19 @@
 
   function render(data) {
     var places = data.places;
-    var map = L.map(el, { scrollWheelZoom: false }).setView(data.view.center, data.view.zoom);
+    var view = data.view;
+    if (mini) {
+      places = places.filter(function (p) { return p.type === 'venue'; });
+      if (places.length) view = { center: [places[0].lat, places[0].lng], zoom: 15 };
+    }
+    // In the footer, a one-finger drag on a phone should scroll the page, not pan the map
+    var fullUrl = mini && safeUrl(el.getAttribute('data-full-map') || '');
+    function openFullMap() {
+      if (fullUrl) window.top.location.href = fullUrl;
+    }
+
+    var map = L.map(el, { scrollWheelZoom: false, dragging: !(mini && L.Browser.mobile) })
+      .setView(view.center, view.zoom);
 
     L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
       maxZoom: 20,
@@ -121,10 +140,30 @@
         iconSize: [size, size],
         iconAnchor: [size / 2, size / 2]
       });
-      L.marker([p.lat, p.lng], { icon: icon, title: p.name })
-        .bindPopup(popupHtml(p))
+      var marker = L.marker([p.lat, p.lng], { icon: icon, title: p.name })
         .addTo(groups[p.type] || groups.other);
+      // A popup doesn't fit in the footer frame, so there the pin opens the full map instead
+      if (mini) marker.on('click', openFullMap);
+      else marker.bindPopup(popupHtml(p));
     });
+
+    if (mini) {
+      // The required Stadia/OSM credits stay; the optional Leaflet prefix goes to save a line
+      map.attributionControl.setPrefix(false);
+      if (fullUrl) {
+        var full = L.control({ position: 'topright' });
+        full.onAdd = function () {
+          var a = L.DomUtil.create('a', 'ga-full-link');
+          a.href = fullUrl;
+          a.target = '_top';
+          a.textContent = 'Parking, hotels & dining map';
+          L.DomEvent.disableClickPropagation(a);
+          return a;
+        };
+        full.addTo(map);
+      }
+      return;
+    }
 
     // Toggle layers on and off
     var overlays = {};

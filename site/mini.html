@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- Footer map: a small venue-only map, framed by embed/footer.html in the Squarespace footer.
+     It fills whatever size the iframe gives it. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Baird Center map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="ga-map.css">
+  <style>html, body, #gaMap { height: 100%; min-height: 0; margin: 0; } body { background: #f4f4f4; }</style>
+</head>
+<body>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <div id="gaMap" data-mode="mini" data-full-map="https://www.pcaga2027.org/map"></div>
+  <script src="ga-map.js"></script>
+</body>
+</html>

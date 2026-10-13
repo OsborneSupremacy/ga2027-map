@@ -35,6 +35,7 @@
 }
 .ga-pin.parking   { background: #1565c0; color: #fff; border-radius: 4px; }
 .ga-pin.hotel     { background: #3f7a35; color: #fff; }
+.ga-pin.dining    { background: #c0580c; color: #fff; }
 .ga-pin.transport { background: #6a3d9a; color: #fff; }
 .ga-pin.venue     { background: #111; color: #fff; width: 34px; height: 34px; }
 .ga-pin.warning   { background: #c62828; color: #fff; }

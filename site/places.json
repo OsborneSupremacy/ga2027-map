@@ -225,6 +225,34 @@
             "lat": 43.03880,
             "lng": -87.91452,
             "note": "Eastbound Wisconsin Ave cannot turn left onto Dr. MLK Jr. Dr."
+        },
+        {
+            "type": "dining",
+            "name": "DOC's Smokehouse",
+            "lat": 43.03988,
+            "lng": -87.91586,
+            "links": [
+                {
+                    "text":"Website",
+                    "url":"https://www.docsbbq.net/"
+                }
+            ],
+            "note":"BBQ Price $$"
+        },
+        {
+            "type": "dining",
+            "name": "The Capital Grille",
+            "lat": 43.03909,
+            "lng": -87.91589,
+            "links": [
+                {
+                    "text":"Website",
+                    "url":"https://www.thecapitalgrille.com/locations/wi/milwaukee/milwaukee/8027?cmpid=br:tcg_ag:ie_ch:loc_ca:TCGGMB_sn:gmb_gt:milwaukee-wi-8027_pl:locurl_rd:1023"
+                }
+                
+            ],
+            "note":"Steakhouse - Price $$$ - Reservations Recommended"
+
         }
     ]
 }

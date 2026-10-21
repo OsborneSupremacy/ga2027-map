@@ -195,7 +195,7 @@
             ]
         },
         {
-            "type": "transport",
+            "type": "entrance",
             "icon": "truck",
             "name": "Loading Dock (Baird Center)",
             "lat": 43.0410,
@@ -206,6 +206,34 @@
                     "url": "https://abmparking.com/facilities/401-wisconsin-avenue-parking/"
                 }
             ]
+        },
+        {
+            "type": "entrance",
+            "name": "Baird Center North Building Main Entrance",
+            "note": "406 W Kilbourn Ave, Milwaukee, WI",
+            "lat": 43.04157,
+            "lng": -87.91627
+        },
+        {
+            "type": "entrance",
+            "name": "Baird Center South Building Main Entrance",
+            "note": "400 W Wisconsin Ave, Milwaukee, WI",
+            "lat": 43.03921,
+            "lng": -87.91652
+        },
+        {
+            "type": "entrance",
+            "name": "Baird Center West Kilbourn Avenue Parking Entrance",
+            "note": "501 W Kilbourn Ave, Milwaukee, WI",
+            "lat": 43.04140,
+            "lng": -87.91744
+        },
+        {
+            "type": "entrance",
+            "name": "Baird Center West Wells Street Parking Entrance",
+            "note": "500 W Wells St, Milwaukee, WI",
+            "lat": 43.04047,
+            "lng": -87.91716
         },
         {
             "type": "venue",

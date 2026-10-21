@@ -17,10 +17,10 @@ try {
   process.exit(1);
 }
 
-const TYPES = ['parking', 'hotel', 'dining', 'transport', 'venue', 'warning'];
+const TYPES = ['parking', 'hotel', 'dining', 'entrance', 'transport', 'venue', 'warning'];
 const PLACE_KEYS = ['type', 'icon', 'name', 'price', 'volunteer', 'note', 'links', 'lat', 'lng'];
 // Must match ICONS in site/ga-map.js
-const ICONS = ['parking', 'hotel', 'dining', 'building', 'train', 'truck', 'warning'];
+const ICONS = ['parking', 'hotel', 'dining', 'entrance', 'building', 'train', 'truck', 'warning'];
 
 // A generous box around downtown Milwaukee. Catches swapped lat/lng and dropped minus signs.
 const BOUNDS = { lat: [42.9, 43.2], lng: [-88.1, -87.8] };

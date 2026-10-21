@@ -1,6 +1,6 @@
 # ga2027-map
 
-The interactive area map on [pcaga2027.org](https://www.pcaga2027.org), the site for the 2027 PCA General Assembly at the Baird Center in Milwaukee. It shows parking, hotels, dining, and transportation near the venue.
+The interactive area map on [pcaga2027.org](https://www.pcaga2027.org), the site for the 2027 PCA General Assembly at the Baird Center in Milwaukee. It shows parking, hotels, dining, venue entrances, and transportation near the venue.
 
 The map is hosted on GitHub Pages at `https://map.pcaga2027.org` and embedded in Squarespace by a snippet that never changes. Every update happens in this repository.
 
@@ -43,9 +43,9 @@ The Squarespace page's own header was removed on purpose, because on mobile it c
   "links": [{ "text": "Pre-pay", "url": "https://example.com" }] }
 ```
 
-- `type`: one of `parking`, `hotel`, `dining`, `transport`, `venue`, `warning`. It sets the pin color and icon, and which layer toggle controls the pin.
+- `type`: one of `parking`, `hotel`, `dining`, `entrance`, `transport`, `venue`, `warning`. It sets the pin color and icon, and which layer toggle controls the pin.
 - `name`, `lat`, `lng`: required. Each place needs a different name.
-- `icon`: optional. Replaces the type's usual icon for this one place. One of `parking`, `hotel`, `dining`, `building`, `train`, `truck`, `warning`. The icons are drawn in `ICONS` in `ga-map.js`, and a new one has to be added there and in `scripts/validate-places.mjs`.
+- `icon`: optional. Replaces the type's usual icon for this one place. One of `parking`, `hotel`, `dining`, `entrance`, `building`, `train`, `truck`, `warning`. The icons are drawn in `ICONS` in `ga-map.js`, and a new one has to be added there and in `scripts/validate-places.mjs`.
 - `price` (`$` to `$$$`), `volunteer` (`true`/`false`), `note`, `links`: optional. Links must be `https://`.
 
 Every popup except `warning` pins gets Google Maps and Apple Maps directions buttons, built from `lat`/`lng`. Directions go to the pin itself, so put a parking pin on the lot's entrance.

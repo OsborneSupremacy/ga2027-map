@@ -32,7 +32,7 @@
     new URL('places.json', script ? script.src : window.location.href).href;
   var showCoords = /gaCoords/.test(window.location.search + window.location.hash);
 
-  var GROUP_NAMES = { parking: 'Parking', hotel: 'Hotels', dining: 'Dining', transport: 'Transportation' };
+  var GROUP_NAMES = { parking: 'Parking', hotel: 'Hotels', dining: 'Dining', entrance: 'Entrances', transport: 'Transportation' };
 
   // Line icons for the pins, drawn on a 24x24 grid and stroked in the pin's text color. Each type
   // has a default; "icon" in places.json overrides it for one place. Keep the names in sync with
@@ -41,13 +41,14 @@
     parking: '<path d="M8 20V4h5.5a4.5 4.5 0 0 1 0 9H8"/>',
     hotel: '<path d="M3 5v14M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11.5" r="1.8"/>',
     dining: '<path d="M5 3v5a3 3 0 0 0 6 0V3M8 3v18M19 21V3c-2.5 1.5-4 4-4 8v3h4"/>',
+    entrance: '<path d="M14 3H6v18h8M14 3l5 2v14l-5 2zM11.5 12h.01"/>',
     building: '<path d="M3 9l9-5 9 5M4 20h16M6 11v6M10 11v6M14 11v6M18 11v6"/>',
     train: '<rect x="6" y="3" width="12" height="13" rx="3"/><path d="M6 10h12M9.5 13h.01M14.5 13h.01M9 19l-2 3M15 19l2 3"/>',
     truck: '<path d="M2 5h11v10H2zM13 8h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/>',
     warning: '<path d="M12 5v9M12 18.5h.01"/>'
   };
   var DEFAULT_ICONS = {
-    parking: 'parking', hotel: 'hotel', dining: 'dining', venue: 'building', transport: 'train', warning: 'warning'
+    parking: 'parking', hotel: 'hotel', dining: 'dining', entrance: 'entrance', venue: 'building', transport: 'train', warning: 'warning'
   };
 
   function pinHtml(type, icon) {
@@ -179,7 +180,8 @@
       div.innerHTML =
         '<span class="key">' + pinHtml('parking') + 'Parking</span>' +
         '<span class="key">' + pinHtml('hotel') + 'Hotels</span>' +
-        '<span class="key">' + pinHtml('dining') + 'Dining</span><br>' +
+        '<span class="key">' + pinHtml('dining') + 'Dining</span>' +
+        '<span class="key">' + pinHtml('entrance') + 'Entrances</span><br>' +
         'Tap any pin for details. $–$$$ = relative price.';
       return div;
     };

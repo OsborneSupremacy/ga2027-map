@@ -42,6 +42,7 @@
     hotel: '<path d="M3 5v14M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11.5" r="1.8"/>',
     dining: '<path d="M5 3v5a3 3 0 0 0 6 0V3M8 3v18M19 21V3c-2.5 1.5-4 4-4 8v3h4"/>',
     entrance: '<path d="M14 3H6v18h8M14 3l5 2v14l-5 2zM11.5 12h.01"/>',
+    car: '<path d="M5 11l2-5h10l2 5M3 11h18v6H3zM6 17v2M18 17v2"/><circle cx="7" cy="14" r="1"/><circle cx="17" cy="14" r="1"/>',
     building: '<path d="M3 9l9-5 9 5M4 20h16M6 11v6M10 11v6M14 11v6M18 11v6"/>',
     train: '<rect x="6" y="3" width="12" height="13" rx="3"/><path d="M6 10h12M9.5 13h.01M14.5 13h.01M9 19l-2 3M15 19l2 3"/>',
     truck: '<path d="M2 5h11v10H2zM13 8h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/>',
@@ -181,7 +182,8 @@
         '<span class="key">' + pinHtml('parking') + 'Parking</span>' +
         '<span class="key">' + pinHtml('hotel') + 'Hotels</span>' +
         '<span class="key">' + pinHtml('dining') + 'Dining</span>' +
-        '<span class="key">' + pinHtml('entrance') + 'Entrances</span><br>' +
+        '<span class="key">' + pinHtml('entrance') + 'Entrances</span>' +
+        '<span class="key">' + pinHtml('entrance', 'car') + 'Parking entrances</span><br>' +
         'Tap any pin for details. $–$$$ = relative price.';
       return div;
     };

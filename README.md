@@ -45,7 +45,7 @@ The Squarespace page's own header was removed on purpose, because on mobile it c
 
 - `type`: one of `parking`, `hotel`, `dining`, `entrance`, `transport`, `venue`, `warning`. It sets the pin color and icon, and which layer toggle controls the pin.
 - `name`, `lat`, `lng`: required. Each place needs a different name.
-- `icon`: optional. Replaces the type's usual icon for this one place. One of `parking`, `hotel`, `dining`, `entrance`, `building`, `train`, `truck`, `warning`. The icons are drawn in `ICONS` in `ga-map.js`, and a new one has to be added there and in `scripts/validate-places.mjs`.
+- `icon`: optional. Replaces the type's usual icon for this one place. One of `parking`, `hotel`, `dining`, `entrance`, `car`, `building`, `train`, `truck`, `warning`. The icons are drawn in `ICONS` in `ga-map.js`, and a new one has to be added there and in `scripts/validate-places.mjs`.
 - `price` (`$` to `$$$`), `volunteer` (`true`/`false`), `note`, `links`: optional. Links must be `https://`.
 
 Every popup except `warning` pins gets Google Maps and Apple Maps directions buttons, built from `lat`/`lng`. Directions go to the pin itself, so put a parking pin on the lot's entrance.

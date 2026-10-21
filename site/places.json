@@ -223,6 +223,7 @@
         },
         {
             "type": "entrance",
+            "icon": "car",
             "name": "Baird Center West Kilbourn Avenue Parking Entrance",
             "note": "501 W Kilbourn Ave, Milwaukee, WI",
             "lat": 43.04140,
@@ -230,6 +231,7 @@
         },
         {
             "type": "entrance",
+            "icon": "car",
             "name": "Baird Center West Wells Street Parking Entrance",
             "note": "500 W Wells St, Milwaukee, WI",
             "lat": 43.04047,

@@ -174,8 +174,9 @@
     });
     L.control.layers(null, overlays, { collapsed: window.innerWidth < 600 }).addTo(map);
 
-    // Legend
-    var legend = L.control({ position: 'bottomleft' });
+    // Legend. On a phone the attribution wraps across the whole bottom edge, so the legend goes in
+    // the same corner, where Leaflet stacks it above the attribution instead of under it.
+    var legend = L.control({ position: window.innerWidth < 600 ? 'bottomright' : 'bottomleft' });
     legend.onAdd = function () {
       var div = L.DomUtil.create('div', 'ga-legend');
       div.innerHTML =

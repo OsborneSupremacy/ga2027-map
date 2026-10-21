@@ -197,9 +197,9 @@
         {
             "type": "entrance",
             "icon": "truck",
-            "name": "Loading Dock (Baird Center)",
-            "lat": 43.0410,
-            "lng": -87.9190,
+            "name": "Baird Center Loading Dock 6th Street Entrance",
+            "lat": 443.04073447583238,
+            "lng": -87.91873533637758,
             "links": [
                 {
                     "text": "Website",
@@ -211,8 +211,8 @@
             "type": "entrance",
             "name": "Baird Center North Building Main Entrance",
             "note": "406 W Kilbourn Ave, Milwaukee, WI",
-            "lat": 43.04157,
-            "lng": -87.91627
+            "lat": 43.041358,
+            "lng": -87.916474
         },
         {
             "type": "entrance",
@@ -280,7 +280,7 @@
                     "text":"Website",
                     "url":"https://www.thecapitalgrille.com/locations/wi/milwaukee/milwaukee/8027?cmpid=br:tcg_ag:ie_ch:loc_ca:TCGGMB_sn:gmb_gt:milwaukee-wi-8027_pl:locurl_rd:1023"
                 }
-                
+
             ],
             "note":"Steakhouse - Price: $$$ - Reservations Recommended"
         },
@@ -294,7 +294,7 @@
                     "text":"Website",
                     "url":"https://www.draftandvessel.com/draft-co"
                 }
-                
+
             ],
             "note":"Taste of Wisconsin! beer, fried cheese curds and pubgrub - Price $"
 

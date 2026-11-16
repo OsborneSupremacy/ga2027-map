@@ -262,19 +262,21 @@
             "name": "DOC's Smokehouse",
             "lat": 43.03988,
             "lng": -87.91586,
+            "price": "$$",
             "links": [
                 {
                     "text":"Website",
                     "url":"https://www.docsbbq.net/"
                 }
             ],
-            "note":"BBQ - Price: $$"
+            "note":"BBQ"
         },
         {
             "type": "dining",
             "name": "The Capital Grille",
             "lat": 43.03909,
             "lng": -87.91589,
+            "price": "$$$",
             "links": [
                 {
                     "text":"Website",
@@ -282,13 +284,14 @@
                 }
 
             ],
-            "note":"Steakhouse - Price: $$$ - Reservations Recommended"
+            "note":"Steakhouse - Reservations Recommended"
         },
         {
             "type": "dining",
             "name": "Draft & Vessel",
             "lat": 43.03872,
             "lng": -87.91711,
+            "price": "$",
             "links": [
                 {
                     "text":"Website",
@@ -296,8 +299,22 @@
                 }
 
             ],
-            "note":"Taste of Wisconsin! beer, fried cheese curds and pubgrub - Price $"
+            "note":"Taste of Wisconsin! beer, fried cheese curds and pubgrub"
 
+        },
+        {
+            "type": "dining",
+            "name": "3rd St. Market Hall",
+            "lat": 43.03848,
+            "lng": -87.91450,
+            "price": "$$",
+            "links": [
+                {
+                    "text":"Vendors",
+                    "url":"https://3rdstmarkethall.com/vendors"
+                }
+            ],
+            "note":"20+ food vendors. 8 AM - 8 PM (10 PM on Friday)"
         }
     ]
 }
